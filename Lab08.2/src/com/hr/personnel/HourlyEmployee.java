@@ -21,6 +21,13 @@ public class HourlyEmployee extends Employee {
         setHours(hours);
     }
 
+    @Override
+    public void pay() {
+        // local variable used here but it could be in sout as rate * hours
+        double payment = getRate() * getHours();
+        System.out.println(" Fleet admiral love machine is paid " + payment + " To destroy ships");
+    }
+
 
     public double getRate() {
         return rate;
@@ -39,6 +46,6 @@ public class HourlyEmployee extends Employee {
     }
 
     public String toString() {
-        return "Employee: name=" + getName() + ", hireDate=" + getHireDate() + ", Rate:" + getRate() + ", hours=" + getHours();
+        return super.toString() + ", Rate:" + getRate() + ", hours=" + getHours();
     }
 }

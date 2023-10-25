@@ -7,7 +7,19 @@ public class SalariedEmployee extends Employee {
     public double salary;
 
     public SalariedEmployee() {
+      // super(); is always here automatically
+    }
 
+
+
+    @Override
+    public void pay() {
+        // opposed to hourly pay salary is just in sout and not a local variable
+        System.out.println(getName() + " is paid " + salary + " for being salary");
+    }
+
+    public void takeVacation() {
+        System.out.println(getName() + " is on vacation");
     }
 
     public SalariedEmployee(String name, LocalDate hireDate) {
@@ -28,6 +40,6 @@ public class SalariedEmployee extends Employee {
     }
 
     public String toString() {
-        return "Employee: name=" + getName() + ", hireDate=" + getHireDate() + ", Salary=" + getSalary();
+        return super.toString() + ", Salary=" + getSalary();
     }
 }
